@@ -52,6 +52,9 @@ function App() {
         const newTodos = todos.filter(todo => todo.id !== id)
         setTodos(newTodos)
       })
+      .catch(err => {
+        throw err
+      })
 
   }
 
