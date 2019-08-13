@@ -1,19 +1,5 @@
 import React from 'react';
 
-// function getStyle(props) {
-//   return {
-//     background: '#f4f4f4',
-//     textDecoration: props.todo.completed ? 'line-through' : 'none'
-//   }
-// }
-
-//  const getStyle = (props) => {
-//   return {
-//     background: '#f4f4f4',
-//     textDecoration: props.todo.completed ? 'line-through' : 'none'
-//   }
-// }
-
 function TodoItem(props) {
 
   const getStyle = (props) => {
@@ -38,9 +24,9 @@ function TodoItem(props) {
   return (
     <div style={getStyle(props)}>
       <p>
-        <input type='checkbox' onChange={() => props.toogleComplete(props.todo.id)} />
+        <input type='checkbox' onChange={() => props.toogleComplete(props.index)} />
         {props.todo.title}
-        <button onClick={() => props.deleteTodo(props.todo.id)} style={btnStyle}>x</button>
+        <button onClick={() => props.deleteTodo(props.index)} style={btnStyle}>x</button>
       </p>
     </div>
   );

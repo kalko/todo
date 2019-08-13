@@ -1,14 +1,16 @@
-import React from 'react';
+import React from 'react'
 import TodoItem from './TodoItem';
 
-function Todos(props) {
+function Todos({ todos, toogleComplete, deleteTodo }) {
+
   return (
-    // props.todos.map(todo => <h4>{todo.title}</h4>)
-    props.todos.map(todo =>
-      <TodoItem key={todo.id}
+    todos.map((todo, index) =>
+      <TodoItem
+        key={index}
+        index={index}
         todo={todo}
-        toogleComplete={props.toogleComplete}
-        deleteTodo={props.deleteTodo} />
+        toogleComplete={toogleComplete}
+        deleteTodo={deleteTodo} />
     )
   );
 }

@@ -1,6 +1,22 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom'
+import Search from '../../components/Search'
 
+
+function Header({ search }) {
+
+  return (
+    <React.Fragment>
+      <header style={headerStyle}>
+        <h1>TodoList</h1>
+        <div style={{ position: 'absolute', top: '10px', right: '10px' }}>
+          <Link to='/' style={linkStyle}>Home</Link> | <Link to='/about' style={linkStyle}>About</Link>
+        </div>
+        <Search search={search} />
+      </header>
+    </React.Fragment>
+  )
+}
 
 const headerStyle = {
   background: '#333',
@@ -11,16 +27,7 @@ const headerStyle = {
 
 const linkStyle = {
   color: '#fff',
-  textDecoration: 'none'
-}
-
-function Header(params) {
-  return (
-    <header style={headerStyle}>
-      <h1>TodoList</h1>
-      <Link to='/' style={linkStyle}>Home</Link> | <Link to='/about' style={linkStyle}>About</Link>
-    </header>
-  )
+  textDecoration: 'none',
 }
 
 export default Header
